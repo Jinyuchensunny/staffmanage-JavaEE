@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="default" extends="struts-default" namespace="/">
+
+        <!-- 1. Dept的App接口 -->
+        <action name="findAllDepts" class="myDeptAction"
+                method="findAllDepts">
+        </action>
+        <action name="getAllDepts" class="myDeptAction"
+                method="getAllDepts">
+        </action>
+        <action name="findDeptById" class="myDeptAction"
+                method="findDeptById">
+        </action>
+        <action name="addDept" class="myDeptAction"
+                method="addDept">
+            <result name="success" >/addDeptSuccess.jsp</result>
+        </action>
+
+        <!-- 2. Emp的App接口 -->
+        <action name="findAllEmps" class="myEmpAction"
+                method="findAllEmps">
+        </action>
+        <action name="findEmpsByDeptId" class="myEmpAction"
+                method="findEmpsByDeptId">
+        </action>
+        <action name="findEmpById" class="myEmpAction"
+                method="findEmpById">
+        </action>
+        <action name="addEmp" class="myEmpAction"
+                method="addEmp">
+            <result name="success" >/addEmpSuccess.jsp</result>
+        </action>
+        <action name="showaddEmp" class="myEmpAction"
+                method="showaddEmp">
+            <result name="success" >/addEmp.jsp</result>
+        </action>
+
+    </package>
+</struts>

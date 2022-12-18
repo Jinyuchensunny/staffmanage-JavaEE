@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="org.model.Emp" table="emp" schema="staffmanage">
+        <id name="empId">
+            <column name="emp_id" sql-type="int(11)"/>
+            <generator class="native"/>
+        </id>
+        <property name="empName">
+            <column name="emp_name" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <property name="photo">
+            <column name="photo" sql-type="char(255)" not-null="true"/>
+        </property>
+        <property name="brief">
+            <column name="brief" sql-type="varchar(255)" not-null="true"/>
+        </property>
+        <many-to-one name="dept" class="org.model.Dept">
+            <column name="d_id" not-null="true"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>
